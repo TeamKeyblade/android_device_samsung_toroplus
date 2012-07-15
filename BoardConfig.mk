@@ -15,7 +15,11 @@
 # Use the non-open-source part, if present
 -include vendor/samsung/toroplus/BoardConfigVendor.mk
 
-# Use the part that is common between all toros
+# Use the open-source board-info file if none was set by the vendor
+# config.
+TARGET_BOARD_INFO_FILE ?= device/samsung/toroplus/board-info.txt
+
+# Use the part that is common between all tunas
 include device/samsung/tuna/BoardConfig.mk
 
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 30691799040
